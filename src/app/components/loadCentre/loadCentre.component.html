@@ -1,0 +1,115 @@
+<div style="width: 100%;overflow: scroll;">
+  <mat-tab-group  mat-align-tabs="bottom"  style="width: 100%;">
+    <mat-tab label="Rueven"> 
+      
+        <div>
+       
+       
+        <div >
+        
+          <table class="table table-bordered border-primary" style="width: 100%;border:  solid lightblue 1px; border-collapse: collapse;border-radius: 10px;">
+            <thead  >
+              <tr>
+                <th scope="col" *ngFor="let head of ruevenTable.headers" style="border: solid 1px lightblue;font-size: 12px;text-align: justify;">{{head}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let reuw of ruevenTable.values  | search: query" class="table-rows">
+                <td>{{reuw.sdc}}</td>
+                <td>{{reuw.substation}}</td>
+                <td>{{reuw.feederDesc}}</td>
+                <td>{{reuw.distributorDescprition}}</td>
+                <td>{{reuw.loadCentreType}}</td>
+                <td>{{reuw.quantities}}</td>
+                <td>{{reuw.outgateDate}}</td>
+                <td>{{reuw.comments}}</td>
+    
+              </tr>
+          
+            </tbody>
+          </table>
+        </div>
+        </div> 
+    </mat-tab>
+    <mat-tab label="Lenasia"> 
+      
+      <div>
+        <div>
+          <table class="table table-bordered border-primary" style="width: 100%;border:  solid lightblue 1px; border-collapse: collapse;border-radius: 10px;">
+            <thead  >
+              <tr>
+                <th scope="col" *ngFor="let head of ruevenTable.headers" style="border: solid 1px lightblue;font-size: 12px;text-align: justify;">{{head}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let lens of lensTable.values | search: query" class="table-rows">
+                <td>{{lens.sdc}}</td>
+                <td>{{lens.substation}}</td>
+                <td>{{lens.feederDesc}}</td>
+                <td>{{lens.distributorDescprition}}</td>
+                <td>{{lens.loadCentreType}}</td>
+                <td>{{lens.quantities}}</td>
+                <td>{{lens.outgateDate}}</td>
+                <td>{{lens.comments}}</td>
+              </tr>
+          
+            </tbody>
+          </table>
+        </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Roodeport"> 
+      <div>
+        <div>
+          <table class="table table-bordered border-primary" style="width: 100%;border:  solid lightblue 1px; border-collapse: collapse;border-radius: 10px;">
+            <thead  >
+              <tr>
+                <th scope="col" *ngFor="let head of ruevenTable.headers" style="border: solid 1px lightblue;font-size: 12px;text-align: justify;">{{head}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let rood of roodeportTable.values  | search: query" class="table-rows">
+                <td>{{rood.sdc}}</td>
+                <td>{{rood.substation}}</td>
+                <td>{{rood.feederDesc}}</td>
+                <td>{{rood.distributorDescprition}}</td>
+                <td>{{rood.loadCentreType}}</td>
+                <td>{{rood.quantities}}</td>
+                <td>{{rood.outgateDate}}</td>
+                <td>{{rood.comments}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
+    
+    </mat-tab>
+    <mat-tab label="HurstHill"> 
+      <div>
+        <div>
+          <table class="table table-bordered border-primary" style="width: 100%;border:  solid lightblue 1px; border-collapse: collapse;border-radius: 10px;">
+            <thead  >
+              <tr>
+                <th scope="col" *ngFor="let head of hurstHillTable.headers" style="border: solid 1px lightblue;font-size: 12px;text-align: justify;">{{head}}</th>
+              </tr>
+            </thead>
+            <tbody >
+              <tr *ngFor="let hur of hurstHillTable.values | search: query" class="table-rows">
+                <td>{{hur.sdc}}</td>
+                <td>{{hur.substation}}</td>
+                <td>{{hur.feederDesc}}</td>
+                <td>{{hur.distributorDescprition}}</td>
+                <td>{{hur.loadCentreType}}</td>
+                <td>{{hur.quantities}}</td>
+                <td>{{hur.outgateDate}}</td>
+                <td>{{hur.comments}}</td>
+              </tr>
+          
+            </tbody>
+          </table>
+        </div>
+        </div>
+    </mat-tab>
+ 
+  </mat-tab-group>
+  </div>

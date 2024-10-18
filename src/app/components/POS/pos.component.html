@@ -1,0 +1,173 @@
+<div style="width: 100%;">
+  <mat-tab-group  mat-align-tabs="bottom"  style="width: 100%;">
+    <mat-tab label="Rueven"> 
+      
+        <div>
+       
+       
+        <div>
+        
+          <table class="table table-bordered border-primary" style="width: 100%;border:  solid lightblue 1px; border-collapse: collapse;border-radius: 10px;">
+            <thead  >
+              <tr>
+                <th scope="col" *ngFor="let head of ruevenTable.headers" style="border: solid 1px lightblue;font-size: 12px;text-align: justify;">{{head}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let reuw of ruevenTable.values" class="table-rows">
+                <td>{{reuw.sdc}}</td>
+                <td>{{reuw.substation}}</td>
+                <td>{{reuw.transSize}}</td>
+                <td>{{reuw.trasnsDescription}}</td>
+                <td>{{reuw.outgateDate}}</td>
+                <td>{{reuw.comments}}</td>
+                <td>{{reuw.cost}}</td>
+                <td>{{reuw.update}}</td>
+    
+              </tr>
+          
+            </tbody>
+          </table>
+        </div>
+        </div> 
+    </mat-tab>
+    <mat-tab label="Lenasia"> 
+      
+      <div>
+        <div>
+          <table class="table table-bordered border-primary" style="width: 100%;border:  solid lightblue 1px; border-collapse: collapse;border-radius: 10px;">
+            <thead  >
+              <tr>
+                <th scope="col" *ngFor="let head of ruevenTable.headers" style="border: solid 1px lightblue;font-size: 12px;text-align: justify;">{{head}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let lens of lensTable.values" class="table-rows">
+                <td>{{lens.sdc}}</td>
+                <td>{{lens.substation}}</td>
+                <td>{{lens.transSize}}</td>
+                <td>{{lens.trasnsDescription}}</td>
+                <td>{{lens.outgateDate}}</td>
+                <td>{{lens.comments}}</td>
+                <td>{{lens.cost}}</td>
+                <td>{{lens.update}}</td>
+              </tr>
+          
+            </tbody>
+          </table>
+        </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Roodeport"> 
+      <div>
+        <div>
+          <table class="table table-bordered border-primary" style="width: 100%;border:  solid lightblue 1px; border-collapse: collapse;border-radius: 10px;">
+            <thead  >
+              <tr>
+                <th scope="col" *ngFor="let head of ruevenTable.headers" style="border: solid 1px lightblue;font-size: 12px;text-align: justify;">{{head}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let rood of roodeportTable.values " class="table-rows">
+                <td>{{rood.sdc}}</td>
+                <td>{{rood.substation}}</td>
+                <td>{{rood.transSize}}</td>
+                <td>{{rood.trasnsDescription}}</td>
+                <td>{{rood.outgateDate}}</td>
+                <td>{{rood.comments}}</td>
+                <td>{{rood.cost}}</td>
+                <td>{{rood.update}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
+    
+    </mat-tab>
+    <mat-tab label="HurstHill"> 
+      <div>
+        <div>
+          <table class="table table-bordered border-primary" style="width: 100%;border:  solid lightblue 1px; border-collapse: collapse;border-radius: 10px;">
+            <thead  >
+              <tr>
+                <th scope="col" *ngFor="let head of hurstHillTable.headers" style="border: solid 1px lightblue;font-size: 12px;text-align: justify;">{{head}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let hur of hurstHillTable.values" class="table-rows">
+                <td>{{hur.sdc}}</td>
+                <td>{{hur.substation}}</td>
+                <td>{{hur.transSize}}</td>
+                <td>{{hur.trasnsDescription}}</td>
+                <td>{{hur.outgateDate}}</td>
+                <td>{{hur.comments}}</td>
+                <td>{{hur.cost}}</td>
+                <td>{{hur.update}}</td>
+              </tr>
+          
+            </tbody>
+          </table>
+        </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="North SDC" *ngIf="PageTitle == 'Consolidated Report' || PageTitle == 'POS'"> 
+       
+      <div>
+       
+       
+      <div>
+      
+        <table class="table table-bordered border-primary" style="width: 100%;border:  solid lightblue 1px; border-collapse: collapse;border-radius: 10px;">
+          <thead  >
+            <tr>
+              <th scope="col" *ngFor="let head of roodeportTable.headers" style="border: solid 1px lightblue;font-size: 12px;text-align: justify;">{{head}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let nop of northTable.values" class="table-rows">
+              <td>{{nop.sdc}}</td>
+              <td>{{nop.substation}}</td>
+              <td>{{nop.transSize}}</td>
+              <td>{{nop.trasnsDescription}}</td>
+              <td>{{nop.outgateDate}}</td>
+              <td>{{nop.comments}}</td>
+              <td>{{nop.cost}}</td>
+              <td>{{nop.update}}</td>
+  
+            </tr>
+        
+          </tbody>
+        </table>
+      </div>
+      </div>
+      
+    
+    </mat-tab>
+  
+  
+  
+  
+   
+  <!-- <div>
+   
+  
+    <table class="table table-bordered border-primary" style="width: 100%;border:  solid lightblue 1px; border-collapse: collapse;border-radius: 10px;">
+      <thead  >
+        <tr>
+          <th scope="col" *ngFor="let head of ruevenTable.headers" style="border: solid 1px lightblue;font-size: 12px;text-align: justify;">{{head}}</th>
+        
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let line of ruevenTable.data">
+         <td  *ngFor="let row of ruevenTable.data"  style="border: solid 1px lightblue;font-size: 12px;text-align: justify;"> {{row}}</td>
+        </tr>
+    
+      </tbody>
+    </table>
+  
+  
+  </div> -->
+  
+  </mat-tab-group>
+  </div>

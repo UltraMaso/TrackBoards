@@ -1,0 +1,169 @@
+
+test
+
+<div style="width: 100%;">
+
+
+  <mat-tab-group  mat-align-tabs="bottom"  style="width: 100%;">
+    <mat-tab label="Rueven"> 
+      
+        <div>
+       
+       
+        <div>
+        
+          <table class="table table-bordered border-primary" style="width: 100%;border:  solid lightblue 1px; border-collapse: collapse;border-radius: 10px;">
+            <thead  >
+              <tr>
+                <th scope="col" *ngFor="let head of ruevenTable.headers" style="border: solid 1px lightblue;font-size: 12px;text-align: justify;">{{head}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let reuw of ruevenTable.values | search: query"  class="table-rows">
+                <td>{{reuw.sdc}}</td>
+                <td>{{reuw.month}}</td>
+                <td>{{reuw.TransNmame}}</td>
+                <td>{{reuw.FeederBoard}}</td>
+                <td>{{reuw. loadCentre}}</td>
+
+                sdc: string;
+                month:string;
+                TransNmame:string;
+                FeederBoard:string;
+                loadCentre:string;
+                
+    
+              </tr>
+          
+            </tbody>
+          </table>
+        </div>
+        </div> 
+    </mat-tab>
+    <mat-tab label="Lenasia"> 
+      
+      <div>
+        <div>
+          <table class="table table-bordered border-primary" style="width: 100%;border:  solid lightblue 1px; border-collapse: collapse;border-radius: 10px;">
+            <thead  >
+              <tr>
+                <th scope="col" *ngFor="let head of ruevenTable.headers" style="border: solid 1px lightblue;font-size: 12px;text-align: justify;">{{head}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let lens of lensTable.values | search: query" class="table-rows">
+                <td>{{lens.sdc}}</td>
+                <td>{{lens.month}}</td>
+                <td>{{lens.TransNmame}}</td>
+                <td>{{lens.FeederBoard}}</td>
+                <td>{{lens. loadCentre}}</td>
+              </tr>
+          
+            </tbody>
+          </table>
+        </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Roodeport"> 
+      <div>
+        <div>
+          <table class="table table-bordered border-primary" style="width: 100%;border:  solid lightblue 1px; border-collapse: collapse;border-radius: 10px;">
+            <thead  >
+              <tr>
+                <th scope="col" *ngFor="let head of ruevenTable.headers" style="border: solid 1px lightblue;font-size: 12px;text-align: justify;">{{head}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let rood of roodeportTable.values  | search: query" class="table-rows">
+                <td>{{rood.sdc}}</td>
+                <td>{{rood.month}}</td>
+                <td>{{rood.TransNmame}}</td>
+                <td>{{rood.FeederBoard}}</td>
+                <td>{{rood. loadCentre}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
+    
+    </mat-tab>
+    <mat-tab label="HurstHill"> 
+      <div>
+        <div>
+          <table class="table table-bordered border-primary" style="width: 100%;border:  solid lightblue 1px; border-collapse: collapse;border-radius: 10px;">
+            <thead  >
+              <tr>
+                <th scope="col" *ngFor="let head of hurstHillTable.headers" style="border: solid 1px lightblue;font-size: 12px;text-align: justify;">{{head}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let hur of hurstHillTable.values | search: query" class="table-rows">
+                <td>{{hur.sdc}}</td>
+                <td>{{hur.month}}</td>
+                <td>{{hur.TransNmame}}</td>
+                <td>{{hur. FeederBoard}}</td>
+                <td>{{hur. loadCentre}}</td>
+              </tr>
+          
+            </tbody>
+          </table>
+        </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="North SDC" *ngIf="PageTitle == 'Consolidated Report' || PageTitle == 'POS'"> 
+       
+      <div>
+       
+       
+      <div>
+      
+        <table class="table table-bordered border-primary" style="width: 100%;border:  solid lightblue 1px; border-collapse: collapse;border-radius: 10px;">
+          <thead  >
+            <tr>
+              <th scope="col" *ngFor="let head of roodeportTable.headers" style="border: solid 1px lightblue;font-size: 12px;text-align: justify;">{{head}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let nop of northTable.values | search: query" class="table-rows">
+              <td>{{nop.sdc}}</td>
+              <td>{{nop.month}}</td>
+              <td>{{nop.TransNmame}}</td>
+              <td>{{nop.FeederBoard}}</td>
+              <td>{{nop. loadCentre}}</td>
+            </tr>
+        
+          </tbody>
+        </table>
+      </div>
+      </div>
+      
+    
+    </mat-tab>
+  
+  
+  
+  
+   
+  <!-- <div>
+   
+  
+    <table class="table table-bordered border-primary" style="width: 100%;border:  solid lightblue 1px; border-collapse: collapse;border-radius: 10px;">
+      <thead  >
+        <tr>
+          <th scope="col" *ngFor="let head of ruevenTable.headers" style="border: solid 1px lightblue;font-size: 12px;text-align: justify;">{{head}}</th>
+        
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let line of ruevenTable.data">
+         <td  *ngFor="let row of ruevenTable.data"  style="border: solid 1px lightblue;font-size: 12px;text-align: justify;"> {{row}}</td>
+        </tr>
+    
+      </tbody>
+    </table>
+  
+  
+  </div> -->
+  
+  </mat-tab-group>
+  </div>

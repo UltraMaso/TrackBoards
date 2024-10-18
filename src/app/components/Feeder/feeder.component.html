@@ -1,0 +1,110 @@
+<div style="width: 100%;">
+  <mat-tab-group  mat-align-tabs="bottom"  style="width: 100%;">
+    <mat-tab label="Rueven"> 
+      
+        <div>
+       
+       
+        <div>
+        
+          <table class="table table-bordered border-primary" style="width: 100%;border:  solid lightblue 1px; border-collapse: collapse;border-radius: 10px;">
+            <thead  >
+              <tr>
+                <th scope="col" *ngFor="let head of ruevenTable.headers" style="border: solid 1px lightblue;font-size: 12px;text-align: justify;">{{head}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let reuw of ruevenTable.values  | search: query" class="table-rows">
+                <td>{{reuw.sdc}}</td>
+                <td>{{reuw.substation}}</td>
+                <td>{{reuw.feederDesc}}</td>
+                <td>{{reuw.BreakerType}}</td>
+                <td>{{reuw. BreakerType}}</td>
+                <td>{{reuw.comments}}</td>
+                <td>{{reuw.cost}}</td>
+                
+    
+              </tr>
+          
+            </tbody>
+          </table>
+        </div>
+        </div> 
+    </mat-tab>
+    <mat-tab label="Lenasia"> 
+      
+      <div>
+        <div>
+          <table class="table table-bordered border-primary" style="width: 100%;border:  solid lightblue 1px; border-collapse: collapse;border-radius: 10px;">
+            <thead  >
+              <tr>
+                <th scope="col" *ngFor="let head of ruevenTable.headers" style="border: solid 1px lightblue;font-size: 12px;text-align: justify;">{{head}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let lens of lensTable.values  | search: query" class="table-rows">
+                <td>{{lens.sdc}}</td>
+                <td>{{lens.substation}}</td>
+                <td>{{lens. feederDesc}}</td>
+                <td>{{lens. BreakerType}}</td>
+                <td>{{lens.comments}}</td>
+                <td>{{lens.cost}}</td>
+             
+              </tr>
+          
+            </tbody>
+          </table>
+        </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Roodeport"> 
+      <div>
+        <div>
+          <table class="table table-bordered border-primary" style="width: 100%;border:  solid lightblue 1px; border-collapse: collapse;border-radius: 10px;">
+            <thead  >
+              <tr>
+                <th scope="col" *ngFor="let head of ruevenTable.headers" style="border: solid 1px lightblue;font-size: 12px;text-align: justify;">{{head}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let rood of roodeportTable.values  | search: query " class="table-rows">
+                <td>{{rood.sdc}}</td>
+                <td>{{rood.substation}}</td>
+                <td>{{rood. feederDesc}}</td>
+                <td>{{rood. BreakerType}}</td>
+                <td>{{rood.comments}}</td>
+                <td>{{rood.cost}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
+    
+    </mat-tab>
+    <mat-tab label="HurstHill"> 
+      <div>
+        <div>
+          <table class="table table-bordered border-primary" style="width: 100%;border:  solid lightblue 1px; border-collapse: collapse;border-radius: 10px;">
+            <thead  >
+              <tr>
+                <th scope="col" *ngFor="let head of hurstHillTable.headers" style="border: solid 1px lightblue;font-size: 12px;text-align: justify;">{{head}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let hur of hurstHillTable.values  | search: query" class="table-rows">
+                <td>{{hur.sdc}}</td>
+                <td>{{hur.substation}}</td>
+                <td>{{hur. feederDesc}}</td>
+                <td>{{hur. BreakerType}}</td>
+                <td>{{hur.comments}}</td>
+                <td>{{hur.cost}}</td>
+              </tr>
+          
+            </tbody>
+          </table>
+        </div>
+        </div>
+    </mat-tab>
+
+  
+  

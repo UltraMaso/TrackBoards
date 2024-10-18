@@ -1,0 +1,214 @@
+<mat-card class="cardWithShadow">
+    <mat-card-content>
+      <div class="hstack align-items-center flex-column flex-lg-row">
+        <div class="w-100">
+          <mat-card-title style="text-decoration: underline;">{{ PageTitle }}</mat-card-title>
+        </div>
+        <div class="m-l-auto" *ngIf="files != null">
+
+            <mat-form-field   appearance="outline">
+                <mat-select value="mar" (valueChange)="ChangeFiles($event)" placeholder="Select your option" >
+                  @for(file of files; track file ) {
+                    <mat-option [value]="file">
+                      {{ file }}
+                    </mat-option>
+                  }
+                </mat-select>
+              </mat-form-field>
+        </div>
+      </div>
+  
+      <!-- chart -->
+      <!-- <div class="m-t-16" style="height: 295px">
+        <apx-chart
+          [series]="revenueForecastChart.series"
+          [chart]="revenueForecastChart.chart"
+          [colors]="revenueForecastChart.colors"
+          [plotOptions]="revenueForecastChart.plotOptions"
+          [dataLabels]="revenueForecastChart.dataLabels"
+          [legend]="revenueForecastChart.legend"
+          [grid]="revenueForecastChart.grid"
+          [yaxis]="revenueForecastChart.yaxis"
+          [xaxis]="revenueForecastChart.xaxis"
+          [tooltip]="revenueForecastChart.tooltip"
+        ></apx-chart>
+      </div> -->
+  
+     <div>
+      <button type="button" class="btn btn-primary" style="background-color: #635bff;color: white; border-radius: 10px; font-size: 15px;" >
+       
+  <input type="file" (change)="onFileChange($event)"  id ="upload-btn" accept=".xlsx, .xls" hidden/>
+  <label for="upload-btn">Choose File</label>
+  </button> 
+
+<div *ngIf="hasSelectedSheet " style="float: right;">  
+  <input type="text"    [(ngModel)]="query" class="form-control input-sm"  matInput  placeholder="Search..."/><i (click)="printMsg()" class="material-icons search-icon">search</i>
+</div>
+</div>
+
+<div *ngIf="hasSelectedSheet && PageTitle == 'Transformer' " style="width: 100%;">
+<mat-tab-group  mat-align-tabs="bottom"  style="width: 100%;">
+  <mat-tab label="Rueven"> 
+    
+      <div>
+     
+     
+      <div>
+      
+        <table class="table table-bordered border-primary" style="width: 100%;border:  solid lightblue 1px; border-collapse: collapse;border-radius: 10px;">
+          <thead  >
+            <tr>
+              <th scope="col" *ngFor="let head of ruevenTable.headers " style="border: solid 1px lightblue;font-size: 12px;text-align: justify;">{{head}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let reuw of ruevenTable.values | search: query" class="table-rows">
+              <td>{{reuw.sdc}}</td>
+              <td>{{reuw.substation}}</td>
+              <td>{{reuw.transSize}}</td>
+              <td>{{reuw.trasnsDescription}}</td>
+              <td>{{reuw.outgateDate}}</td>
+              <td>{{reuw.comments}}</td>
+              <td>{{reuw.cost}}</td>
+              <td>{{reuw.update}}</td>
+  
+            </tr>
+        
+          </tbody>
+        </table>
+      </div>
+      </div> 
+  </mat-tab>
+  <mat-tab label="Lenasia"> 
+    
+    <div>
+      <div>
+        <table class="table table-bordered border-primary" style="width: 100%;border:  solid lightblue 1px; border-collapse: collapse;border-radius: 10px;">
+          <thead  >
+            <tr>
+              <th scope="col" *ngFor="let head of ruevenTable.headers" style="border: solid 1px lightblue;font-size: 12px;text-align: justify;">{{head}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let lens of lensTable.values  | search: query" class="table-rows">
+              <td>{{lens.sdc}}</td>
+              <td>{{lens.substation}}</td>
+              <td>{{lens.transSize}}</td>
+              <td>{{lens.trasnsDescription}}</td>
+              <td>{{lens.outgateDate}}</td>
+              <td>{{lens.comments}}</td>
+              <td>{{lens.cost}}</td>
+              <td>{{lens.update}}</td>
+            </tr>
+        
+          </tbody>
+        </table>
+      </div>
+      </div>
+  </mat-tab>
+  <mat-tab label="Roodeport"> 
+    <div>
+      <div>
+        <table class="table table-bordered border-primary" style="width: 100%;border:  solid lightblue 1px; border-collapse: collapse;border-radius: 10px;">
+          <thead  >
+            <tr>
+              <th scope="col" *ngFor="let head of ruevenTable.headers" style="border: solid 1px lightblue;font-size: 12px;text-align: justify;">{{head}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let rood of roodeportTable.values  | search: query " class="table-rows">
+              <td>{{rood.sdc}}</td>
+              <td>{{rood.substation}}</td>
+              <td>{{rood.transSize}}</td>
+              <td>{{rood.trasnsDescription}}</td>
+              <td>{{rood.outgateDate}}</td>
+              <td>{{rood.comments}}</td>
+              <td>{{rood.cost}}</td>
+              <td>{{rood.update}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+  
+  </mat-tab>
+  <mat-tab label="HurstHill"> 
+    <div>
+      <div>
+        <table class="table table-bordered border-primary" style="width: 100%;border:  solid lightblue 1px; border-collapse: collapse;border-radius: 10px;">
+          <thead  >
+            <tr>
+              <th scope="col" *ngFor="let head of hurstHillTable.headers" style="border: solid 1px lightblue;font-size: 12px;text-align: justify;">{{head}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let hur of hurstHillTable.values  | search: query" class="table-rows">
+              <td>{{hur.sdc}}</td>
+              <td>{{hur.substation}}</td>
+              <td>{{hur.transSize}}</td>
+              <td>{{hur.trasnsDescription}}</td>
+              <td>{{hur.outgateDate}}</td>
+              <td>{{hur.comments}}</td>
+              <td>{{hur.cost}}</td>
+              <td>{{hur.update}}</td>
+            </tr>
+        
+          </tbody>
+        </table>
+      </div>
+      </div>
+  </mat-tab>
+  <mat-tab label="North SDC" *ngIf="PageTitle == 'Consolidated Report' || PageTitle == 'POS'"> 
+     
+    <div>
+     
+     
+    <div>
+    
+      <table class="table table-bordered border-primary" style="width: 100%;border:  solid lightblue 1px; border-collapse: collapse;border-radius: 10px;">
+        <thead  >
+          <tr>
+            <th scope="col" *ngFor="let head of roodeportTable.headers" style="border: solid 1px lightblue;font-size: 12px;text-align: justify;">{{head}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let nop of northTable.values  | search: query" class="table-rows">
+            <td>{{nop.sdc}}</td>
+            <td>{{nop.substation}}</td>
+            <td>{{nop.transSize}}</td>
+            <td>{{nop.trasnsDescription}}</td>
+            <td>{{nop.outgateDate}}</td>
+            <td>{{nop.comments}}</td>
+            <td>{{nop.cost}}</td>
+            <td>{{nop.update}}</td>
+
+          </tr>
+      
+        </tbody>
+      </table>
+    </div>
+    </div>
+    
+  
+  </mat-tab>
+
+</mat-tab-group>
+</div>
+
+<div *ngIf="PageTitle == 'POS'">
+  <app-pos [POSData]="POSData" [query]="query"></app-pos>
+</div>
+
+<div *ngIf="PageTitle == 'Load Centre'">
+  <app-loadCentre [loadData]="loadCentreData" [query]="query"></app-loadCentre>
+</div>
+
+<div *ngIf="PageTitle == 'Consolidated Report '">
+  <app-consolidated [consolidatedData]="consolidatedData" [query]="query"></app-consolidated>
+</div>
+<div *ngIf="PageTitle == 'Feederboard'">
+  <app-feeder [feederData]="feederData" [query]="query"></app-feeder>
+</div>
+    </mat-card-content>
+  </mat-card>
+  

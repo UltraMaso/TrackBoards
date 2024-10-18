@@ -1,0 +1,72 @@
+<mat-toolbar class="topbar">
+  <!-- Mobile Menu -->
+  @if(!showToggle) {
+  <button
+    mat-mini-fab
+    color="inherit"
+    (click)="toggleMobileNav.emit()"
+    class="d-flex justify-content-center"
+  >
+    <i
+      class="iconify icon-20 d-flex"
+      data-icon="solar:hamburger-menu-line-duotone"
+    ></i>
+  </button>
+  }
+  <!-- --------------------------------------------------------------- -->
+  <!-- Notification Dropdown -->
+  <!-- --------------------------------------------------------------- -->
+  
+
+   
+  
+  <!-- --------------------------------------------------------------- -->
+  <!-- profile Dropdown -->
+  <!-- --------------------------------------------------------------- -->
+  <button
+    mat-fab
+    extended
+    color="inherit"
+    [matMenuTriggerFor]="profilemenu"
+    aria-label="Notifications"
+    class="d-flex justify-content-center profile-btn-dd"
+  >
+ <pre style="color: blue;font-weight: bold;font-size: 30px;font-family: Arial, Helvetica, sans-serif;">SDC Tracking Dashboard</pre>
+  </button>
+  <mat-menu #profilemenu="matMenu" class="topbar-dd cardWithShadow">
+    <button mat-menu-item>
+      <mat-icon class="d-flex align-items-center"
+        ><i
+          data-icon="solar:shield-user-line-duotone"
+          class="iconify icon-22"
+        ></i></mat-icon
+      >My Profile
+    </button>
+    <button mat-menu-item>
+      <mat-icon class="d-flex align-items-center"
+        ><i
+          data-icon="solar:user-id-line-duotone"
+          class="iconify icon-22"
+        ></i></mat-icon
+      >My Account
+    </button>
+    <button mat-menu-item>
+      <mat-icon class="d-flex align-items-center"
+        ><i
+          data-icon="solar:checklist-minimalistic-line-duotone"
+          class="iconify icon-22"
+        ></i> </mat-icon
+      >My Task
+    </button>
+
+    <div class="p-x-12 m-t-12">
+      <a
+        [routerLink]="['/authentication/login']"
+        mat-stroked-button
+        color="primary"
+        class="w-100"
+        >Logout</a
+      >
+    </div>
+  </mat-menu>
+</mat-toolbar>
